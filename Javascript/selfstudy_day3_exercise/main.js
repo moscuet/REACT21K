@@ -1,9 +1,9 @@
 
 
 //1. Create an **array of 5 elements**, each element is a random number of either 1 or 0
-
 //let randomNum = () => Math.random()>.5 ? 1 : 0
 // let randomArray = [ randomNum(), randomNum(), randomNum(), randomNum(), randomNum()]
+
 let randomizedRange = 2
 let randomNum = () => Math.floor( Math.random()*randomizedRange)
 
