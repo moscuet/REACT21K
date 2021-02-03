@@ -72,8 +72,13 @@ winJackpot()
 
 // 9. If each round costs 50 cents, run the above program 5 times, either manually or use a while loop to help you, in order to learn the average amount of money you have to spend on winning a jackpot 😄 
 console.log('question 9')
-
-let avgRoundToWin = Math.round(((winJackpot()+winJackpot()+winJackpot()+winJackpot())+winJackpot())/5)
+let totalRoundToWin = 0
+let roundCounter = 0
+while (roundCounter <5){
+    totalRoundToWin += winJackpot()
+    roundCounter++
+}
+let avgRoundToWin = totalRoundToWin / roundCounter 
 let avgMoneyToWin = avgRoundToWin*50/100
 console.log(`average round need to win Jackpot is ${avgRoundToWin}. So average amount of money needed to win Jackpot is ${avgMoneyToWin} `)
 

@@ -1,0 +1,30 @@
+.bulb {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: yellowgreen;
+    margin: 20px;
+}
+.active {
+    background: red;
+}
+
+
+
+div {
+    box-sizing: border-box;
+  }
+  div#bulbs {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  divbulb {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+  }

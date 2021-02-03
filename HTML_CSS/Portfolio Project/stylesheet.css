@@ -7,7 +7,26 @@ footer {
 }
 body {
     font-family: "Trirong", serif;
+    background-color: #98E8BC;
   }
-img {
-    width: 500px;
+
+#header{
+ display: flex;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+nav a {
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+#logo {
+    width: 135px;
+}
+#logo img{
+    width: 100%
 }
