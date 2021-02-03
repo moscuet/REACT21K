@@ -1,13 +1,16 @@
 console.log('connected')
 
-let number_of_light = 20
-let gameOn = true
+let number_of_light = Number(document.getElementById('number_of_light').value)
+let time_delay = Number(document.getElementById('time_delay').value)
+let gameOn = false
 let counter
+
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
+
 let timer = ()=>{    
     document.querySelectorAll('.bulb')[counter].classList.remove('active')
     counter++
@@ -27,11 +30,12 @@ let createLight = () =>{
       document.getElementById('bulbs').appendChild(newEl)
       count++
     }
-    document.querySelectorAll('.bulb')[0].classList.add('active')
+    // document.querySelectorAll('.bulb')[0].classList.add('active')
 }
 createLight()
 
-let interval =  setInterval ( timer,250)
+
+//let interval =  setInterval ( timer,250)
 
 const lightOff = () =>{
      if(counter === 0) document.getElementById('win').innerText = 'You have won!!'
@@ -44,9 +48,11 @@ const lightOff = () =>{
 }
 
 const lightOn = () =>{
+    document.getElementById('win').innerText = ''
     if(!gameOn){
         createLight()
-        interval = setInterval( timer,250)
+        document.querySelectorAll('.bulb')[0].classList.add('active')
+        interval = setInterval( timer, time_delay)
         gameOn = true
     }
 }

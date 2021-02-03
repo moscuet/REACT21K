@@ -9,7 +9,9 @@
     background: red;
 }
 
-
+button{
+  padding: 5px 20px;
+}
 
 div {
     box-sizing: border-box;
@@ -19,12 +21,10 @@ div {
     left: 50%;
     top: 50%;
   }
-  divbulb {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+  #win {
+    margin: 20px;
+    color: red;
+    font-size: 24px;
+    text-align: center;
+
   }
