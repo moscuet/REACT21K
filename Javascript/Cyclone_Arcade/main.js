@@ -2,10 +2,10 @@ console.log('connected')
 
 let number_of_light = Number(document.getElementById('number_of_light').value)
 let time_delay =  Number(document.getElementById('time_delay').value)
-let chosen_light_index = Number(document.getElementById('chosen_light').value)
+let chosen_light_index = Number(document.getElementById('chosen_light').value)-1
+let winMessage = document.getElementById('win')
 let gameOn = false
 let counter
-
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -21,10 +21,10 @@ let timer = ()=>{
 }
 
 let createLight = () =>{
-    counter = 0;
+   counter = 0;
     removeAllChildNodes(document.getElementById('bulbs'));
     number_of_light = Number(document.getElementById('number_of_light').value)||10
-    chosen_light_index = Number(document.getElementById('chosen_light').value)
+    chosen_light_index = Number(document.getElementById('chosen_light').value)-1
     time_delay =  Number(document.getElementById('time_delay').value)
     let count= 0;
     while ( count <  number_of_light){
@@ -42,7 +42,10 @@ createLight()
 //let interval =  setInterval ( timer,250)
 
 const lightOff = () =>{
-     if(counter === chosen_light_index) document.getElementById('win').innerText = 'You have won!!'
+    let message = counter === chosen_light_index ? 'You Have Won!!!' : 'No Luck, Try Again!!!'
+    winMessage.innerText= message
+    setTimeout( ()=>winMessage.innerText = '',3000)
+     
     if(gameOn){
         clearInterval(interval)
         gameOn = false
@@ -50,7 +53,7 @@ const lightOff = () =>{
 }
 
 const lightOn = () =>{
-    document.getElementById('win').innerText = ''
+    winMessage.innerText = ''
     if(!gameOn){
         createLight()
         document.querySelectorAll('.bulb')[0].classList.add('active')
@@ -59,11 +62,8 @@ const lightOn = () =>{
     }
 }
 
-
 document.getElementById('stop').addEventListener('click',lightOff)
 document.getElementById('play').addEventListener('click',lightOn)
-
-
 
 
 function arrangeBulbsInACircle  (nodes)  {   

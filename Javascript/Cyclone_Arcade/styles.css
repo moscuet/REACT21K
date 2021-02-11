@@ -14,16 +14,18 @@
 button{
   padding: 5px 20px;
 }
+.bulb.chosen {
+  background: red;
+}
 .bulb.active {
   background-color: yellow;
   transform: scale(2.5);
 }
-.bulb.chosen {
-  background: red;
-}
+
 
   #win {
-    margin: 20px;
+    margin: 20px auto;
+    height: 100px;
     color: red;
     font-size: 24px;
     text-align: center;
