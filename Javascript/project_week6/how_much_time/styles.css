@@ -1,0 +1,13 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+    color: royalblue;
+}
+
+#container  > * {
+    margin: 20px;
+}
+form > * {
+    margin: 10px;
+}

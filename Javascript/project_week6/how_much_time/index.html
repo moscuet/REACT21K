@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>How much time</title>
+</head>
+<body>
+    <h1>How much time</h1>
+    <div id= 'wrapper'>
+        <div id="container">
+            <form id="userInput" > 
+                <div id="event">
+                    <label for="eventName">Event Name</label>
+                    <input id = 'event_name' type="text">  
+                </div>
+
+                <div>
+                    <label for="eventDate">Event Date</label>
+                    <input id = 'event_date' type="date">
+                    
+                    <label for="appt"> Time</label>
+                    <input type="time" id="event_time" name="event_time"  required>
+                </div>
+
+
+
+
+                <button id  ='submit'  >Submit</button>
+            </form>
+            <div id="output"> output</div>
+        </div>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
