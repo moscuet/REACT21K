@@ -38,6 +38,9 @@ body {
 .buttons {}
 
 .operators {}
+#bottom{
+   display: flex;
+}
 
 .operators div {
     display: inline-block;
