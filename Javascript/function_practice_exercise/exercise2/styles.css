@@ -6,4 +6,8 @@
 table {
     border-collapse: collapse;
 }
-    
+   
+button {
+    background: rgb(79, 160, 79);
+    margin: 20px;
+}
