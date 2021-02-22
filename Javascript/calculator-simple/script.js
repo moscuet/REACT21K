@@ -9,11 +9,11 @@ document.getElementById('result').addEventListener('click', performCalculation);
  */
 function performCalculation(){
     let result
-    if( !firstNumber || !secondNumber) return
-    if (operation === 'plus') result = Number(secondNumber) + Number(firstNumber) ; 
-    if (operation === 'minus') result =  Number(secondNumber) - Number(firstNumber) ;
-    if (operation === 'multiply') result =   Number(secondNumber) *  Number(firstNumber);
-    if (operation === 'divide') result =  Number(secondNumber) / Number(firstNumber)  ;
+    if( !firstNumber || !secondNumber || !operation) return
+    if (operation === '+') result = Number(secondNumber) + Number(firstNumber) ; 
+    if (operation === '-') result =  Number(secondNumber) - Number(firstNumber) ;
+    if (operation === '*') result =   Number(secondNumber) *  Number(firstNumber);
+    if (operation === '÷') result =  Number(secondNumber) / Number(firstNumber)  ;
     document.getElementById('input').innerText = result
     secondNumber = ''+ result
     firstNumber=''
@@ -24,12 +24,11 @@ function performCalculation(){
 
 document.querySelectorAll('.operators > div').forEach(button => {
     button.addEventListener('click', function(){
-       
-        updateSelectedOperation(this);
+        updateSelectedOperation()
         if (firstNumber) secondNumber = firstNumber
         firstNumber = ''
+        updateDisplay()
     })
-
 })
 
 document.querySelectorAll('.numbers > div').forEach(button => {
@@ -39,20 +38,20 @@ document.querySelectorAll('.numbers > div').forEach(button => {
             updateDisplay();
             return
           }
-        updateSelectedNumber(this);
+        updateSelectedNumber();
         updateDisplay();
     });
 })
 
 function updateDisplay() {
-    document.getElementById('input').innerText = `${firstNumber}`;
+    document.getElementById('input').innerText = `${secondNumber} ${operation} ${firstNumber}`;
 }
 
 function updateSelectedNumber(text) {
-    if (text.innerText === '.' && firstNumber.indexOf('.') > -1){
+    if (this.event.target.innerText === '.' && firstNumber.indexOf('.') > -1){
         return;
     }
-    firstNumber += text.innerText;
+    firstNumber += this.event.target.innerText;
 }
 
 function reSet (){
@@ -65,21 +64,19 @@ function reSet (){
  * update the variable operation with the user choice
  * @return {void}
  */
-function updateSelectedOperation(el){
-
-     console.log('#', el.innerText)
-    switch(el.innerText){
+function updateSelectedOperation(){
+    switch(this.event.target.innerText){
         case '+':
-            operation = 'plus';
+            operation = '+';
             break;
         case '-':
-            operation = 'minus';
+            operation = '-';
             break;
         case '×' :
-            operation = 'multiply';
+            operation = '*';
             break;
         case '÷':
-            operation = 'divide';
+            operation = '÷';
             break;   
         default:
             console.log('Oops?');
@@ -87,4 +84,3 @@ function updateSelectedOperation(el){
     }
 
 }
-
