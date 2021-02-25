@@ -3,6 +3,10 @@
     flex-direction: row;
     border: 2px solid red;
     color: royalblue;
+    justify-content: center;
+}
+#container * {
+    flex-grow: 1;
 }
 
 #container  > * {
@@ -10,4 +14,9 @@
 }
 form > * {
     margin: 10px;
+}
+
+#countDown {
+    border: 2px solid yellow;
+    display: flex;
 }

@@ -10,27 +10,23 @@
     <h1>How much time</h1>
     <div id= 'wrapper'>
         <div id="container">
-            <form id="userInput" > 
+            <form id="userInput" >  
                 <div id="event">
-                    <label for="eventName">Event Name</label>
-                    <input id = 'event_name' type="text">  
+                    <div > <label for="eventName">Event Name</label> <input id = 'event_name' type="text"></div>
+                    <div ><label for="startDate">Event Date</label><input id = 'start_date' type="date"></div>
+                   <div ><label for="eventDate">Event Date</label><input id = 'end_date' type="date"></div>
                 </div>
-
-                <div>
-                    <label for="eventDate">Event Date</label>
-                    <input id = 'event_date' type="date">
-                    
-                    <label for="appt"> Time</label>
-                    <input type="time" id="event_time" name="event_time"  required>
-                </div>
-
-
-
-
                 <button id  ='submit'  >Submit</button>
             </form>
-            <div id="output"> output</div>
+
+            <div id="output">
+                <div id="eventInfo">Event Info :</div>
+                <div id="daysleft"> Days left before start the event: </div>
+                <div id="weekdaysLeft"> Weekdays left before start the eveny</div>
+                <div id="BusinessdaysLeft">Business days left before start the eveny </div>
+            </div>
         </div>
+        <div id="countDown"><p>Cuntdown</p></div>
     </div>
 
 
