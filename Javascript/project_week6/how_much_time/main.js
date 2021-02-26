@@ -23,9 +23,9 @@ submit.addEventListener ('click', (event)=> {
     let end = new Date(eventTime)
     let start = (userStartDate)?  new Date(userStartDate) :  new Date(new Date().toDateString())
 
-    let daysLeft = Math.floor((end - start)/1000/60/60/24)
-    document.getElementById('eventName').innerText = `Event name : ${eventName}.`
-    document.getElementById('daysLeft').innerText = `Total days left: ${daysLeft}.`
+    let daysLeft = Math.floor((end - start)/1000/60/60/24) ||0
+    document.getElementById('eventName').innerText = `Event name : ${eventName? eventName : 'Anonymous'}.`
+    document.getElementById('daysLeft').innerText = `Total days left: ${daysLeft} ${daysLeft>1 ? 'days': 'day'}.`
 
     let weekdays = 0
     let today = start.getDay()
@@ -36,11 +36,11 @@ submit.addEventListener ('click', (event)=> {
         if(today === 8) today = 1
    }
    
-   document.getElementById('weekdaysLeft').innerText =  `Week days left: ${weekdays} ${weekdays>1 ? 'days': 'day'} `
+   document.getElementById('weekdaysLeft').innerText =  `Week days left: ${weekdays} ${weekdays>1 ? 'days': 'day'}.`
 
    let businessDays =  weekdays - countPublicHolidays(start,end)
 
-   document.getElementById('BusinessdaysLeft').innerText =  `Business days left: ${businessDays} ${businessDays>1 ? 'days': 'day'}`
+   document.getElementById('BusinessdaysLeft').innerText =  `Business days left: ${businessDays} ${businessDays>1 ? 'days': 'day'}.`
 })
 let interval
 
