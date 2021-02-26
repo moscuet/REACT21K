@@ -12,25 +12,39 @@
         <div id="container">
             <form id="userInput" >  
                 <div id="event">
-                    <div > <label for="eventName">Event Name</label> <input id = 'event_name' type="text"></div>
-                    <div ><label for="startDate">Event Date</label><input id = 'start_date' type="date"></div>
-                   <div ><label for="eventDate">Event Date</label><input id = 'end_date' type="date"></div>
+                    <div > 
+                        <div><label for="eventName">Event Name</label> <input id = 'event_name' type="text"></div>
+                        <div><label for="startDate"> Start Date</label><input id = 'start_date' type="date"></div>
+                    </div>
+                    <div >
+                        <div><label for="eventDate">Event Date</label><input id = 'end_date' type="date"> </div>
+                        <div><label for="eventTime">Event Time</label><input id = 'end_time' type="time"></div> 
+                    </div>
                 </div>
-                <button id  ='submit'  >Submit</button>
+
+                <button id  ='submit'> Submit </button>
             </form>
 
             <div id="output">
                 <div id="eventInfo">Event Info :</div>
-                <div id="daysleft"> Days left before start the event: </div>
-                <div id="weekdaysLeft"> Weekdays left before start the eveny</div>
-                <div id="BusinessdaysLeft">Business days left before start the eveny </div>
+                <div id="daysleft"> Days left : </div>
+                <div id="weekdaysLeft"> Weekdays left :</div>
+                <div id="BusinessdaysLeft">Business days left : </div>
             </div>
         </div>
-        <div id="countDown"><p>Cuntdown</p></div>
+        <div class="countDown">
+            <h1 id="headline">Countdown to the event</h1>
+            <div id="countdown">
+              <ul>
+                <li>days<span id="days">00</span></li>
+                <li>Hours<span id="hours">00</span></li>
+                <li>Minutes<span id="minutes">00</span></li>
+                <li>Seconds<span id="seconds">00</span></li>
+              </ul>
+            </div>
+            <h3 id= 'message'></h3>
+        </div>
     </div>
-
-
-
     <script src="./main.js"></script>
 </body>
 </html>

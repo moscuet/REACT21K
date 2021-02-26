@@ -1,7 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: 24px;
+  }
+
+  @font-face {
+    font-family: digital-7;
+    src: url(./digital-7/digital-7.ttf);
+ }
+
+
+
 #container {
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
     color: royalblue;
     justify-content: center;
 }
@@ -16,7 +33,66 @@ form > * {
     margin: 10px;
 }
 
-#countDown {
-    border: 2px solid yellow;
+#event  {
     display: flex;
+    flex-direction: column;
+
+}
+
+#event > div {
+    width: 100%;
+    display: flex;
+
+}
+
+#event > div > div {
+    width: 50%;
+}
+
+#event > div > div * {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    width: 45%;
+
+}
+
+/* countdown counter */
+#countDown {
+    color: #333;
+    margin: 0 auto;
+  }
+  h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h3 {
+      text-align: center;
+      color: red;
+  }
+
+ul {   
+    text-align: center;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    font-family: digital-7;
+  }
+li span {
+    display: block;
+    font-size: 4.5rem;
 }
