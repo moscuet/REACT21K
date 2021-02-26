@@ -18,7 +18,7 @@ submit.addEventListener ('click', (event)=> {
     let userStartDate = document.getElementById('start_date').value 
     let eventTime  = document.getElementById('end_date').value
     
-    if(eventTime)counter()
+    if( eventTime &&  new Date(eventTime).getTime() > new Date().getTime()) counter()
 
     let end = new Date(eventTime)
     let start = (userStartDate)?  new Date(userStartDate) :  new Date(new Date().toDateString())
@@ -64,7 +64,6 @@ const counter = () =>{
         document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
         document.getElementById("minutes").innerText = minutes < 10? '0'+ minutes : minutes;
         document.getElementById("seconds").innerText = seconds < 10? '0'+ seconds : seconds;
-        console.log(difference)
         if (difference < 1000) {
           clearInterval(interval)
           document.getElementById("message").innerText = "COUNTDOWN HAS EXPIRED!!";
