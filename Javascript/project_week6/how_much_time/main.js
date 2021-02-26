@@ -24,8 +24,9 @@ submit.addEventListener ('click', (event)=> {
     let start = (userStartDate)?  new Date(userStartDate) :  new Date(new Date().toDateString())
 
     let daysLeft = Math.floor((end - start)/1000/60/60/24)
-    document.getElementById('eventInfo').innerText = `Event name : ${eventName}. Time left to start the event: ${daysLeft} ${daysLeft>1? 'days' : 'day'} left to start the event ${eventName}`
-   
+    document.getElementById('eventName').innerText = `Event name : ${eventName}.`
+    document.getElementById('daysLeft').innerText = `Total days left: ${daysLeft}.`
+
     let weekdays = 0
     let today = start.getDay()
      
@@ -35,36 +36,38 @@ submit.addEventListener ('click', (event)=> {
         if(today === 8) today = 1
    }
    
-   document.getElementById('weekdaysLeft').innerText =  `${weekdays} Week ${weekdays>1 ? 'days': 'day'} left to start the event ${eventName} `
+   document.getElementById('weekdaysLeft').innerText =  `Week days left: ${weekdays} ${weekdays>1 ? 'days': 'day'} `
 
    let businessDays =  weekdays - countPublicHolidays(start,end)
 
-   document.getElementById('BusinessdaysLeft').innerText =  `${businessDays} business ${businessDays>1 ? 'days': 'day'} left to start the event ${eventName} `
+   document.getElementById('BusinessdaysLeft').innerText =  `Business days left: ${businessDays} ${businessDays>1 ? 'days': 'day'}`
 })
-
+let interval
 
 // Set the date we're counting down to
 const counter = () =>{
-      let eventDate = document.getElementById('end_date').value
-      let eventTime = document.getElementById('end_time').value
-      let countDownDate = new Date(eventDate+ ' ' + eventTime).getTime()
-      let interval = setInterval(function() {
-      let now = new Date().getTime();
-      let difference = countDownDate - now;
-        
-      let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        
-      document.getElementById("days").innerText = days < 10 ? '0' + days : days;
-      document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
-      document.getElementById("minutes").innerText = minutes < 10? '0'+ minutes : minutes;
-      document.getElementById("seconds").innerText = seconds < 10? '0'+ seconds : seconds;
-      console.log(difference)
-      if (difference < 1000) {
-        clearInterval(interval)
-        document.getElementById("message").innerText = "COUNTDOWN HAS EXPIRED!!";
-      }
+        if(interval) clearInterval(interval)
+        let eventDate = document.getElementById('end_date').value
+        let eventTime = document.getElementById('end_time').value 
+          interval = setInterval(function() {
+       
+        let countDownDate = new Date(eventDate+ ' ' + eventTime).getTime()
+        let now = new Date().getTime();
+        let difference = countDownDate - now;
+          
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+          
+        document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10? '0'+ minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10? '0'+ seconds : seconds;
+        console.log(difference)
+        if (difference < 1000) {
+          clearInterval(interval)
+          document.getElementById("message").innerText = "COUNTDOWN HAS EXPIRED!!";
+        }
     }, 1000);
 }
