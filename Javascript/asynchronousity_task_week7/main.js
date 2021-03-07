@@ -20,21 +20,23 @@ function pokeMan (url) {
         .then ( response => response.json())
         .then (data => {
             let {name,base_experience, height, id, order, weight, abilities, forms, species, types} = data
-           document.getElementById('results').innerHTML = `
-           <div><img src="${data.sprites.front_default}"> </div>
-           <h3>Name : ${name}</h3>
-           Information: <ul>
-           <li>Id : ${id} </li>
-           <li> Order: ${order} </li>
-            <li> Base experience : ${base_experience} </li>
-            <li>Height : ${height}</li>
-            <li> Weight: ${weight} </li>
-            <li> Species: ${species.name} </li>
-            <li> Abilities: <ul> ${abilities.map( a => `<li> ${a.ability.name}</li>`).join('')}   </li> </ul>
-            <li> Forms: <ul> ${forms.map( form => `<li> ${form.name}</li>`).join('')}</li> </ul>
-            <li> Types: <ul> ${types.map( t => `<li> ${t.type.name}</li>`).join('')}</li> </ul>
-           </ul>
-           `
+           
+            document.getElementById('results').innerHTML = `
+                <div><img src="${data.sprites.front_default}"> </div>
+                <h3>Name : ${name}</h3>
+                <h4> Information: <h4/>
+                    <ul>
+                        <li>Id : ${id} </li>
+                        <li> Order: ${order} </li>
+                        <li> Base experience : ${base_experience} </li>
+                        <li>Height : ${height}</li>
+                        <li> Weight: ${weight} </li>
+                        <li> Species: ${species.name} </li>
+                        <li> Abilities: <ul> ${abilities.map( a => `<li> ${a.ability.name}</li>`).join('')}   </li> </ul>
+                        <li> Forms: <ul> ${forms.map( form => `<li> ${form.name}</li>`).join('')}</li> </ul>
+                        <li> Types: <ul> ${types.map( t => `<li> ${t.type.name}</li>`).join('')}</li> </ul>
+                </ul>
+                `
         })
 }
 
