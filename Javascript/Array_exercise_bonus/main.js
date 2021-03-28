@@ -14,33 +14,39 @@ const band = {
     }
 };
 
+let expected = Object.assign({},band)
 
+let plays = []
+let memberPlays =[]
+for(catagory in band.members){
+    band.members[catagory].forEach(element => {
+        element.plays.forEach( e=> {
+            plays.push(e)
+            memberPlays.push('')
+        })
+    }); 
+}
+let playSet = Array.from(new Set (plays))
+
+
+
+// concating all members togeter & sorting by age
 let allMembers = [...band.members.current].concat([...band.members.past]).sort( (a,b)=> b.age - a.age)
 
-console.log(allMembers)
+// removing  reference to allMembers before sorting age descending
+let copiedAllMembers = JSON.parse(JSON.stringify(allMembers));
 
-// let z = Array.from(allMembers).sort((a, b) =>{
-//     console.log(a.name)
-//     return a.name - b.name
-  
-// });
-// console.log(z)
+// sorting by name asscending
+copiedAllMembers.sort((a, b) =>{
+    if(a.age === b.age){
+        return (a.name.toUpperCase()> b.name.toUpperCase())? 1: (a.name.toUpperCase() < b.name.toUpperCase())? -1 : 0
+    }
+})
+// filtering out band list
+let all = [...copiedAllMembers].map( member => `${member.name}, ${member.age}`)
 
-// let q = ['Raymond', 'Gunter', 'Steve', 'Jules',' En']
-// console.log(q.sort( (a,b)=>{
-//     return b-a
-// }))
+expected.members.all = all
+console.log(expected)
 
-let a = [
-    { name: 'Sascha', age: 59, plays: ['vocals', 'synth', 'guitar', 'bass'] },
-    { name: 'Lucia', age: 49, plays: ['vocals', 'synth'] },
-    { name: 'Jules', age: 53, plays: ['guitar', 'bass', 'synth'] },
-    { name: 'Steve', age: 55, plays: ['guitar'] },
-    { name: 'Raymond', age: 57, plays: ['vocals', 'synth'] },
-    { name: 'En', age: 52, plays: ['vocals', 'drums', 'guitar', 'synth'] },
-    { name: 'Gunter', age: 57, plays: ['guitar', 'synth'] }
-]
+//let expected = JSON.parse(JSON.stringify(band))
 
-
-
-console.log(a.sort(a => a.name && a.age===b.age))
