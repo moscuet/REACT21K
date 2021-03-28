@@ -70,7 +70,7 @@ if(partTens===1){
             case 9 : result += 'yhdeksän'
                 break;
             default: result += ''
-            }
+       }
 }
 
 
