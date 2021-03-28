@@ -26,9 +26,10 @@ img {
 
 #temparature {
   display: flex;
+  font-size: larger;
 }
 
-#temparature  p {
+#temparature div p:nth-child(1) {
   font-size: 72px;
 }
 .symbol {
@@ -46,4 +47,9 @@ img {
 
 input {
   font-size: larger;
+}
+
+#city {
+  font-size:large;
+  font-weight: bold;
 }

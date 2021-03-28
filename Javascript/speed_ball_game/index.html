@@ -10,26 +10,49 @@
   <body>
     <div>
       <h1>Speed Game</h1>
-      
-      <div class="board">
-        <h2 id="score"></h2>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
+      <p id = 'player'></p>
+      <div id = 'top_container'>
+        <div class="board">
+          <h2 id="score"></h2>
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+        </div>
+        <div id = 'top_players'>
+          <h2> Top 10 Players</h2>
+           <ul></ul>
+        </div>
       </div>
 
-      <button type="button" id = 'start_end' >Start Game</button>
+      <form  sction = '#' id = 'user_choice'>
+        <div>
+          <input type="radio" name="level" value="easy" checked>Easy
+        <input type="radio" name="level" value="normal">Normal
+        <input type="radio" name="level" value="hard">Hard
+        </div>
+
+        <div>
+          <label for="playerName"> Name</label>
+          <input type="text" id="playerName" name="playerName" placeholder="Type name"> 
+        </div>
+      </form>
+
+
+      <div>    
+        <button type="button" id = 'start_end' >Start Game</button>
+      </div>
+      
     </div>
 
     <div id="result">
       <div class="result_div">
-        <p>game over!!</p>
+        <h2>game over!!</h2>
         <p id="final_score"></p>
         <button type="button" id="close">Close</button>
       </div>
     </div>
-
+    <script type="text/javascript" src="players.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

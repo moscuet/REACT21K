@@ -1,12 +1,10 @@
 body {
+     height: 100vh;
     font-family: "Dosis", sans-serif;
     background-image: linear-gradient(
       to right top,
-      #79fcca,
-      #8cffa9,
-      #acfe82,
-      #d3fa57,
-      #fff225
+      #6dc7f1,
+      #b8ad19
     );
     background-attachment: fixed;
     text-align: center;
@@ -21,8 +19,8 @@ body {
   }
   
   .board {
-    margin: 100px auto;
-    width: 80%;
+    margin: 50px auto;
+    width: 100%;
     text-align: center;
   }
   
@@ -38,6 +36,9 @@ body {
   
   .ball.active {
     background-color: blue;
+    background-image:url('./bg.jpeg') ;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
   .ballOn:active {
@@ -70,7 +71,7 @@ body {
   
   .result_div {
     background-color: white;
-    padding: 100px 0 0 0;
+    padding: 50px 0 0 0;
     width: 40%;
     height: 15%;
     justify-content: center;
@@ -86,8 +87,40 @@ body {
     right: 0px;
     outline: none;
   }
+  .result_div h2 {
+    color: red;
+  }
   
   #final_score {
     font-size: 24px;
     color: #333;
   }
+
+  #playerName {
+    height: 80%;
+    font-size: 24px;
+  }
+
+  #top_container {
+    display: flex;
+  }
+
+  #top_players {
+    padding: 0px 50px 0 0;
+  }
+
+  ul {
+    list-style-type: decimal;
+    text-transform: capitalize;
+    text-align: left;
+  }
+ul li {
+ 
+}
+
+form div {
+  margin: 10px 0 0 0;
+}
+#player, #score {
+  height: 40px;
+}
