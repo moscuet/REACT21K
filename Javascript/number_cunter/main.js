@@ -1,14 +1,13 @@
-// Exercise 2 : numbersText
+// Exercise 2 : Number counter up to 99
 
 let randomNumber = Math.floor(Math.random()*100)
-let part1Text, part2Text
-console.log('ranNum', randomNumber)
-let part1 = randomNumber%10
-let part2 = Math.floor(randomNumber/10)
-let numberText, result
 
-if(part2===1){
-    switch(part1){
+let partOnes = randomNumber%10
+let partTens = Math.floor(randomNumber/10)
+let result
+
+if(partTens===1){
+    switch(partOnes){
         case 0 : result= 'kymmenen'
         break;
         case 1 : result= 'yksitoista'
@@ -32,7 +31,7 @@ if(part2===1){
         default:
     }
 }  else { 
-        switch(part2){
+        switch(partTens){
             case 2 : result= 'kaksikymmentä'
                 break;
             case 3 : result= 'kolmekymmentä'
@@ -51,7 +50,7 @@ if(part2===1){
                 break;
                 default: result = ''
         }
-        switch(part1){
+        switch(partOnes){
             case 1 : result+= 'yksi'
                 break;
             case 2 : result += 'kaksi'
@@ -75,4 +74,5 @@ if(part2===1){
 }
 
 
-console.log(randomNumber, result)
+console.log('Random Number ',randomNumber)
+console.log('In Finnish: ',result)
