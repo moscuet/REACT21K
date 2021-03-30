@@ -18,7 +18,7 @@
     $result ='';
     echo "The number is: $randomNumber<br>";
     if($part2===1){
-        switch($apart1){
+        switch($part1){
             case 0 : $result= 'kymmenen';
             break;
             case 1 : $result= 'yksitoista';
