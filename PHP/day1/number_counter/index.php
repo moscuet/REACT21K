@@ -9,39 +9,37 @@
 <body>
     <h1>Number counting</h1>
     <?php 
-      $randomNumber = rand(0,100);
-    //   $part1Text = '';
-    //   $part2Text= '';
-    $part1 = $randomNumber%10;
-    $part2 = floor($randomNumber/10);
-    $numberText ='';
-    $result ='';
-    echo "The number is: $randomNumber<br>";
-    if($part2===1){
-        switch($apart1){
-            case 0 : $result= 'kymmenen';
-            break;
-            case 1 : $result= 'yksitoista';
-            break;
-            case 2 : $result= 'kaksitoista';
+        $randomNumber = rand(0,100);
+        $part1 = $randomNumber%10;
+        $part2 = floor($randomNumber/10);
+        $numberText ='';
+        $result ='';
+        echo "The number is: $randomNumber<br>";
+        if($part2===1){
+            switch($part1){
+                case 0 : $result= 'kymmenen';
                 break;
-            case 3 : $result= 'kolmetoista';
+                case 1 : $result= 'yksitoista';
                 break;
-            case 4 : $result= 'neljatoista';
-                break;
-            case 5 : $result= 'viisitoista';
-                break;
-            case 6 : $result= 'kuusitoista';
-                break;
-            case 7 : $result= 'seitsemäntoista';
-                break;
-            case 8 : $result= 'kahdeksantoista';
-                break;
-            case 9 : $result= 'yhdeksäntoista';
-                break;
-            default:
-        }
-    }  else { 
+                case 2 : $result= 'kaksitoista';
+                    break;
+                case 3 : $result= 'kolmetoista';
+                    break;
+                case 4 : $result= 'neljatoista';
+                    break;
+                case 5 : $result= 'viisitoista';
+                    break;
+                case 6 : $result= 'kuusitoista';
+                    break;
+                case 7 : $result= 'seitsemäntoista';
+                    break;
+                case 8 : $result= 'kahdeksantoista';
+                    break;
+                case 9 : $result= 'yhdeksäntoista';
+                    break;
+                default:
+            }
+        } else { 
             switch($part2){
                 case 2 : $result= 'kaksikymmentä';
                     break;
@@ -82,9 +80,8 @@
                     break;
                 default: $result .= '';
                 }
-    }
-    echo "NUmber in Finnish: $result"
-
+        }
+        echo "NUmber in Finnish: $result"
     ?>
 </body>
 </html>

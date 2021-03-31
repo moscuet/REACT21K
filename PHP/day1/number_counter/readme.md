@@ -4,6 +4,7 @@
 ## Project Name: Number Counter
 
 ### code in js
+```
 let randomNumber = Math.floor(Math.random()*100)
 let part1Text, part2Text
 console.log('ranNum', randomNumber)
@@ -79,3 +80,5 @@ if(part2===1){
 }
 
 console.log(randomNumber, result)
+
+```
