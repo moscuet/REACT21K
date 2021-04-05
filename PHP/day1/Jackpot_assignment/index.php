@@ -10,7 +10,7 @@
     <h1>Jackpot assignment with php</h1>
 <?php
    
-   $randomizedRange = 10;
+$randomizedRange = 10;
     
 function randomNum() {
     global $randomizedRange;
