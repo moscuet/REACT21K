@@ -27,7 +27,8 @@
     // getting page number from Request ; default page number is 1
     $page = 1;
     if($_GET['page']) $page = $_GET['page'];
-    echo 'Page number: ' . $page;
+    echo 'Page number: ' . $page . '<br>' ;
+    echo 'url = baaseUrl/?page=' . $page . '<br>' ;
 
   
     $chunkPokemon = array_chunk($pokemonsArray, 50, true); 
