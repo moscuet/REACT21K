@@ -22,16 +22,16 @@
     echo("<div>
          <h1> Number of Pokomens displayed: $numberOfPokemons</h1> 
         </div>"
-);  
+    );  
 
-// getting page number from Request ; default page number is 1
-$page = 1;
-if($_GET['page']) $page = $_GET['page'];
-echo $page;
+    // getting page number from Request ; default page number is 1
+    $page = 1;
+    if($_GET['page']) $page = $_GET['page'];
+    echo 'Page number: ' . $page;
 
   
-   $chunkPokemon = array_chunk($pokemonsArray, 50, true); 
-   $chunkPokemonToPrint = array_slice( $chunkPokemon, $page, $page+1);
+    $chunkPokemon = array_chunk($pokemonsArray, 50, true); 
+    $chunkPokemonToPrint = array_slice( $chunkPokemon, $page, $page+1);
    
    // looping through chunkPokemon array
 
