@@ -13,10 +13,6 @@
     <?php
 
         function validate_weekday($day) {
-            // echo ' is string: :'. $day . ' :' ;
-            // echo !is_string($day) ;
-            // echo '<br>';
-            
             
             if(is_string($day))return 'false';
             $options = array(
@@ -53,13 +49,11 @@
                     'max_range' => $balance,
                 )
             );
-          
+            
             $validate = filter_var($amount,FILTER_VALIDATE_INT,$options )&& is_numeric($amount);
             $validate2 = filter_var($balance,FILTER_VALIDATE_INT)&& is_numeric($balance);
             
-            
-            return ($validate && $validate2)? 'true' : 'false';
-            
+            return ($validate && $validate2)? 'true' : 'false'; 
         }
 
         echo 'Able to withdraw 100 from an account of 1000 balance: ' . validate_widthdraw_amount(100, 1000); // true
@@ -79,13 +73,11 @@
 
         function validate_school_email($email_addr) {
             $options = array(
-                'options' => array(
-                    
+                'options' => array(        
                 )
             );
             $validate = filter_var($email_addr,FILTER_VALIDATE_EMAIL) && (substr($email_addr, -6)== '@bc.fi' );
             return $validate? 'true' : 'false';
-           
         }
 
         echo 'test_student@bc.fi is a valid school email: ' . validate_school_email('test_student@bc.fi'); // true
