@@ -10,15 +10,16 @@
     <?php
 
        function validate_weekday($day) {
-     
+            if(is_string($day)==1)return 'false';
+           
             $options = array(
                 'options' => array(
                     'min_range' => 0,
                     'max_range' => 6,
                 )
             );
-            $validate = filter_var($day,FILTER_VALIDATE_INT,$options ) && is_string($day)===1 ;
-            return $validate !== false ? 'true' : 'false' ;
+            $validate = filter_var($day,FILTER_VALIDATE_INT,$options );
+            return $validate !== false ? 'true' : 'false';
         }
 
         echo '0 is a valid weekday: ' . validate_weekday(0); // true
