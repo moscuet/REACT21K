@@ -11,7 +11,6 @@
 
        function validate_weekday($day) {
      
-           // if(is_string($day))return 'false';
             $options = array(
                 'options' => array(
                     'min_range' => 0,
